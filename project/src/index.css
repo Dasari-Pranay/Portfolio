@@ -1,0 +1,38 @@
+/*
+* Your global CSS file (e.g., src/globals.css or src/index.css)
+*/
+
+/* 1. Import the Google Font for the signature. This should come first. */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+/* 2. Ensure the standard Tailwind directives are spelled correctly. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3. Add all custom utility classes here. */
+@layer utilities {
+  /* For the signature on the ID card */
+  .font-signature {
+    font-family: 'Dancing Script', cursive;
+  }
+
+  /* For the gradient text effect in your "About Me" title */
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  /* A custom style used on some of your cards */
+  .neomorphism {
+    @apply shadow-lg dark:shadow-2xl;
+  }
+}
+/* Marquee Animation for the KITS text */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: inline-block;
+  animation: marquee 5s linear infinite;
+}
